@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
+
 public class Game {
     private Integer gameId;
     private String name;
@@ -75,6 +78,18 @@ public class Game {
         game.setUrl(rs.getString("url"));
         game.setImage(rs.getString("image"));
         return game;
+    }
+
+    public JsonObject toJson() {
+        return Json.createObjectBuilder()
+            .add("gid", getGameId())
+            .add("name", getName())
+            .add("year", getYear())
+            .add("ranking", getRanking())
+            .add("users_rated", getUsersRated())
+            .add("url", getUrl())
+            .add("image", getImage())
+            .build();
     }
 
 }

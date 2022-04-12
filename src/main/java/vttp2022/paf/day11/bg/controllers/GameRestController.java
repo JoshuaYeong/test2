@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.json.Json;
 import jakarta.json.JsonArrayBuilder;
 import jakarta.json.JsonObjectBuilder;
+
 import vttp2022.paf.day11.bg.models.Comment;
 import vttp2022.paf.day11.bg.models.Game;
-import vttp2022.paf.day11.bg.repositories.GameRepository;
 import vttp2022.paf.day11.bg.services.GameService;
 
 @RestController
